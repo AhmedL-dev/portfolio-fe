@@ -59,14 +59,14 @@ const Contact = () => {
             setVizValue(vizV);
           }}
         >
-          <React.Fragment>
+          <section id="contact">
             <Typography className={classes.heroContent2} align="center">
               CONTACT ME
             </Typography>
             <Typography className={classes.heroContent1} align="center">
               I'd love to hear from you
             </Typography>
-          </React.Fragment>
+          </section>
         </VizSensor>
       </Grid>
 
