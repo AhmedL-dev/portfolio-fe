@@ -63,7 +63,7 @@ const HeroBlock = () => {
             Python | Node.Js | React.Js
           </Typography>
           <Typography className={classes.heroContent1} align="center">
-            developer
+            developer.
           </Typography>
         </React.Fragment>
       </VizSensor>
