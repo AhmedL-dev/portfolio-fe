@@ -22,6 +22,7 @@ const useStyle = makeStyles((theme) => ({
     ...theme.typography.hero,
     fontWeight: 700,
     fontSize: "4rem",
+    textShadow: "0.5px 0.5px 2px #000000",
   },
   avatar: {
     height: "15em",
@@ -43,7 +44,7 @@ const Contact = () => {
   useEffect(() => {
     if (Object.keys(vizValue).every((k) => !vizValue[k])) {
       setVizValue(true);
-      setNavValue(false);
+      setNavValue(2);
     } else vizValue["contact"] && setNavValue(2);
   }, [vizValue, setVizValue]);
 
