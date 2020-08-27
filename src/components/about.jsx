@@ -63,19 +63,19 @@ const About = () => {
               align="center"
               style={{ marginTop: "2em" }}
               className={classes.content}
-              variant="paragraph"
+              paragraph
             >
               Hi there! I am an aeronautical engineer. You will ask me what am I
               doing here ? I will tell you that I have studied more computer
               programming and development than mechanics throughout my entire
-              mechanical career. to get there, I only followed my passions which
+              mechanical career. To get there, I only followed my passions which
               is mathematics and programming.
             </Typography>
             <Typography
               align="center"
               style={{ marginTop: "2em" }}
               className={classes.content}
-              variant="paragraph"
+              paragraph
             >
               I started by coding my trading strategies, because yes I am also a
               trader, then after having met the champion{" "}
@@ -93,7 +93,7 @@ const About = () => {
               align="center"
               style={{ marginTop: "2em" }}
               className={classes.content}
-              variant="paragraph"
+              paragraph
             >
               I started Web development with django and flask, because I was
               PYTHON fanatic :p. <br />I needed the web development to prototype
@@ -106,7 +106,7 @@ const About = () => {
               align="center"
               style={{ marginTop: "2em" }}
               className={classes.content}
-              variant="paragraph"
+              paragraph
             >
               This combo has made me a Full-stack developer, who can integrate
               the advantage of the Python language and its incredible libraries

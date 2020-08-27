@@ -4,13 +4,10 @@ import { NavValueContext } from "../contexts/navValueContext";
 
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
-import { useTheme } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 
@@ -52,7 +49,6 @@ function ColorOnScroll(props) {
 
 export default function Navbar(props) {
   const classes = useStyles();
-  const theme = useTheme();
   const [navValue, setNavValue] = useContext(NavValueContext);
 
   const handleChange = (event, newValue) => {

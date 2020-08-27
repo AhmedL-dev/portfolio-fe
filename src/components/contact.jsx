@@ -46,7 +46,7 @@ const Contact = () => {
       setVizValue(true);
       setNavValue(2);
     } else vizValue["contact"] && setNavValue(2);
-  }, [vizValue, setVizValue]);
+  }, [vizValue, setVizValue, navValue, setNavValue]);
 
   return (
     <HeroImageGrid container image={image} alignItems="center" justify="center">

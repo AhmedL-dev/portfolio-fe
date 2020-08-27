@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import _ from "lodash";
 
 import { NavValueContext } from "../contexts/navValueContext";
@@ -12,7 +12,7 @@ const Section = ({ id, index, background, children }) => {
 
   useEffect(() => {
     vizValue[IDBCursor] && setNavValue(false);
-  }, [vizValue[id], setVizValue]);
+  }, [vizValue, setVizValue, navValue, setNavValue]);
 
   return (
     <React.Fragment>

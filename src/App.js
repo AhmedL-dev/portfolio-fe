@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Switch, Router } from "react-router-dom";
 
 import theme from "./common/Theme";
 import { ThemeProvider } from "@material-ui/styles";

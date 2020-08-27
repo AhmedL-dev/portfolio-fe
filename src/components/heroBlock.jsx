@@ -42,7 +42,7 @@ const HeroBlock = () => {
       setVizValue(true);
       setNavValue(false);
     } else vizValue["heroBlock"] && setNavValue(false);
-  }, [vizValue, setVizValue]);
+  }, [vizValue, setVizValue, navValue, setNavValue]);
 
   return (
     <HeroImageGrid container image={image} alignItems="center" justify="center">

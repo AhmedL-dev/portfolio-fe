@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "../common/section";
-import Avatar from "@material-ui/core/Avatar";
 
 import aws from "../assets/aws.png";
 import bootstrap from "../assets/bootstrap.png";
@@ -106,7 +105,7 @@ const Skills = () => {
             </Grid>
             <Grid item container justify="space-evenly" alignItems="center">
               {frontEnd.map((fe) => (
-                <Grid item>
+                <Grid key={fe.alt} item>
                   <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
                 </Grid>
               ))}
@@ -119,7 +118,7 @@ const Skills = () => {
             </Grid>
             <Grid item container justify="space-evenly" alignItems="center">
               {backEnd.map((fe) => (
-                <Grid item>
+                <Grid key={fe.alt} item>
                   <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
                 </Grid>
               ))}
@@ -132,7 +131,7 @@ const Skills = () => {
             </Grid>
             <Grid item container justify="space-evenly" alignItems="center">
               {db.map((fe) => (
-                <Grid item>
+                <Grid key={fe.alt} item>
                   <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
                 </Grid>
               ))}
@@ -145,7 +144,7 @@ const Skills = () => {
             </Grid>
             <Grid item container justify="space-evenly" alignItems="center">
               {cloud.map((fe) => (
-                <Grid item>
+                <Grid key={fe.alt} item>
                   <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
                 </Grid>
               ))}
