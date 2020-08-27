@@ -86,6 +86,12 @@ export default function Navbar(props) {
                 <Tab
                   disableTouchRipple
                   className={classes.tab}
+                  label="PORTFOLIO"
+                  href="#portfolio"
+                />
+                <Tab
+                  disableTouchRipple
+                  className={classes.tab}
                   label="SKILLS"
                   href="#skills"
                 />
