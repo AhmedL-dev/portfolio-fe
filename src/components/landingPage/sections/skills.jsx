@@ -83,75 +83,73 @@ const Skills = ({ id, index, background }) => {
 
   return (
     <Section id={id} index={index} background={background}>
-      <React.Fragment>
-        <Grid container justify="center">
-          <Grid
-            container
-            item
-            direction="column"
-            alignItems="center"
-            style={{ maxWidth: "90%" }}
-          >
-            <Grid item>
-              <Typography align="center" className={classes.title}>
-                MY SKILLS
-              </Typography>
-            </Grid>
+      <Grid container justify="center">
+        <Grid
+          container
+          item
+          direction="column"
+          alignItems="center"
+          style={{ maxWidth: "90%" }}
+        >
+          <Grid item>
+            <Typography align="center" className={classes.title}>
+              MY SKILLS
+            </Typography>
+          </Grid>
 
-            <Grid item style={{ marginTop: "4em", marginBottom: "4em" }}>
-              <Typography align="center" className={classes.content}>
-                FRONT-END
-              </Typography>
-            </Grid>
-            <Grid item container justify="space-evenly" alignItems="center">
-              {frontEnd.map((fe) => (
-                <Grid key={fe.alt} item>
-                  <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
-                </Grid>
-              ))}
-            </Grid>
-            {/*  BACK END BLOCK */}
-            <Grid item style={{ marginTop: "6em", marginBottom: "6em" }}>
-              <Typography align="center" className={classes.content}>
-                BACK-END
-              </Typography>
-            </Grid>
-            <Grid item container justify="space-evenly" alignItems="center">
-              {backEnd.map((fe) => (
-                <Grid key={fe.alt} item>
-                  <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
-                </Grid>
-              ))}
-            </Grid>
-            {/*  DATABASE BLOCK */}
-            <Grid item style={{ marginTop: "4em", marginBottom: "4em" }}>
-              <Typography align="center" className={classes.content}>
-                DATABASES
-              </Typography>
-            </Grid>
-            <Grid item container justify="space-evenly" alignItems="center">
-              {db.map((fe) => (
-                <Grid key={fe.alt} item>
-                  <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
-                </Grid>
-              ))}
-            </Grid>
-            {/*  BACK END BLOCK */}
-            <Grid item style={{ marginTop: "4em", marginBottom: "4em" }}>
-              <Typography align="center" className={classes.content}>
-                CLOUD
-              </Typography>
-            </Grid>
-            <Grid item container justify="space-evenly" alignItems="center">
-              {cloud.map((fe) => (
-                <Grid key={fe.alt} item>
-                  <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
-                </Grid>
-              ))}
-            </Grid>
+          <Grid item style={{ marginTop: "4em", marginBottom: "4em" }}>
+            <Typography align="center" className={classes.content}>
+              FRONT-END
+            </Typography>
+          </Grid>
+          <Grid item container justify="space-evenly" alignItems="center">
+            {frontEnd.map((fe) => (
+              <Grid key={fe.alt} item>
+                <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
+              </Grid>
+            ))}
+          </Grid>
+          {/*  BACK END BLOCK */}
+          <Grid item style={{ marginTop: "6em", marginBottom: "6em" }}>
+            <Typography align="center" className={classes.content}>
+              BACK-END
+            </Typography>
+          </Grid>
+          <Grid item container justify="space-evenly" alignItems="center">
+            {backEnd.map((fe) => (
+              <Grid key={fe.alt} item>
+                <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
+              </Grid>
+            ))}
+          </Grid>
+          {/*  DATABASE BLOCK */}
+          <Grid item style={{ marginTop: "4em", marginBottom: "4em" }}>
+            <Typography align="center" className={classes.content}>
+              DATABASES
+            </Typography>
+          </Grid>
+          <Grid item container justify="space-evenly" alignItems="center">
+            {db.map((fe) => (
+              <Grid key={fe.alt} item>
+                <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
+              </Grid>
+            ))}
+          </Grid>
+          {/*  BACK END BLOCK */}
+          <Grid item style={{ marginTop: "4em", marginBottom: "4em" }}>
+            <Typography align="center" className={classes.content}>
+              CLOUD
+            </Typography>
+          </Grid>
+          <Grid item container justify="space-evenly" alignItems="center">
+            {cloud.map((fe) => (
+              <Grid key={fe.alt} item>
+                <img src={fe.img} alt={fe.alt} style={{ maxWidth: 100 }} />
+              </Grid>
+            ))}
           </Grid>
         </Grid>
-      </React.Fragment>
+      </Grid>
     </Section>
   );
 };
