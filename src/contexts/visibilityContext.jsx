@@ -4,10 +4,26 @@ export const VizContext = createContext(null);
 
 export const VizProvider = (props) => {
   const [vizValue, setVizValue] = useState({
-    heroBlock: true,
-    portfolio: false,
-    about: false,
-    contact: false,
+    heroBlock: {
+      value: false,
+      index: false,
+    },
+    about: {
+      value: false,
+      index: 0,
+    },
+    portfolio: {
+      value: false,
+      index: 1,
+    },
+    skills: {
+      value: false,
+      index: 2,
+    },
+    contact: {
+      value: false,
+      index: 3,
+    },
   });
 
   return (

@@ -1,5 +1,4 @@
-import React, { useEffect, useContext } from "react";
-import _ from "lodash";
+import React, { useContext } from "react";
 
 import { NavValueContext } from "../contexts/navValueContext";
 import { VizContext } from "../contexts/visibilityContext";
@@ -10,34 +9,37 @@ const Section = ({ id, index, background, children }) => {
   const [navValue, setNavValue] = useContext(NavValueContext);
   const [vizValue, setVizValue] = useContext(VizContext);
 
-  useEffect(() => {
-    vizValue[IDBCursor] && setNavValue(false);
-  }, [vizValue, setVizValue, navValue, setNavValue]);
+  const handleChange = (isVisible) => {
+    let vizV = { ...vizValue };
+    vizV[id].value = isVisible;
+    setVizValue(vizV);
+    switch (isVisible) {
+      case true:
+        setNavValue(index);
+        break;
+      case false:
+        for (var tab in vizV) {
+          if (vizV[tab].value) {
+            setNavValue(vizV[tab].index);
+            break;
+          }
+        }
+    }
+  };
 
   return (
-    <React.Fragment>
-      <section
-        style={{
-          paddingTop: "10em",
-          paddingBottom: "10em",
-          backgroundColor: background || "inherit",
-        }}
-        id={id}
-      >
-        <VizSensor
-          partialVisibility
-          onChange={(isVisible) => {
-            let vizV = { ...vizValue };
-            if (isVisible) vizV = _.mapValues(vizV, () => false);
-            vizV[id] = isVisible;
-            setVizValue(vizV);
-            isVisible && vizV[id] && setNavValue(index);
-          }}
-        >
-          {children}
-        </VizSensor>
-      </section>
-    </React.Fragment>
+    <section
+      style={{
+        paddingTop: "10em",
+        paddingBottom: "10em",
+        backgroundColor: background || "inherit",
+      }}
+      id={id}
+    >
+      <VizSensor partialVisibility onChange={handleChange}>
+        <React.Fragment>{children}</React.Fragment>
+      </VizSensor>
+    </section>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { NavValueContext } from "../contexts/navValueContext";
+import { NavValueContext } from "../../contexts/navValueContext";
 
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
@@ -82,6 +82,12 @@ export default function Navbar(props) {
                   className={classes.tab}
                   label="ABOUT"
                   href="#about"
+                />
+                <Tab
+                  disableTouchRipple
+                  className={classes.tab}
+                  label="PORTFOLIO"
+                  href="#portfolio"
                 />
                 <Tab
                   disableTouchRipple

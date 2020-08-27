@@ -1,8 +1,8 @@
 import React from "react";
-import Section from "../common/section";
+import Section from "../../../common/section";
 import Avatar from "@material-ui/core/Avatar";
 
-import profile from "../assets/Ahmed-pdp.jpeg";
+import profile from "../../../assets/Ahmed-pdp.jpeg";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -37,11 +37,11 @@ const useStyle = makeStyles((theme) => ({
     },
   },
 }));
-const About = () => {
+const About = ({ id, index, background }) => {
   const classes = useStyle();
 
   return (
-    <Section id="about" index={0}>
+    <Section id={id} index={index} background={background}>
       <React.Fragment>
         <Grid container justify="center">
           <Grid

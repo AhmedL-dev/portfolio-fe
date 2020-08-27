@@ -4,8 +4,8 @@ import theme from "./common/Theme";
 import { ThemeProvider } from "@material-ui/styles";
 
 import "./App.css";
-import NavBar from "./components/navbar";
-import LandingPage from "./components/landingPage";
+import NavBar from "./components/ui/navbar";
+import LandingPage from "./components/landingPage/landingPage";
 
 import { NavValueProvider } from "./contexts/navValueContext";
 import { VizProvider } from "./contexts/visibilityContext";
