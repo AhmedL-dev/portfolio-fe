@@ -1,21 +1,21 @@
 import React from "react";
-import Section from "../common/section";
+import Section from "../../../common/section";
 
-import aws from "../assets/aws.png";
-import bootstrap from "../assets/bootstrap.png";
-import css from "../assets/css.png";
-import django from "../assets/django.png";
-import express from "../assets/express.png";
-import google from "../assets/google.png";
-import heroku from "../assets/heroku.png";
-import html from "../assets/html.png";
-import javascript from "../assets/javascript.png";
-import material from "../assets/material.png";
-import mongo from "../assets/mongo.png";
-import mysql from "../assets/mysql.svg";
-import node from "../assets/node.png";
-import npm from "../assets/npm.png";
-import react from "../assets/react.png";
+import aws from "../../../assets/aws.png";
+import bootstrap from "../../../assets/bootstrap.png";
+import css from "../../../assets/css.png";
+import django from "../../../assets/django.png";
+import express from "../../../assets/express.png";
+import google from "../../../assets/google.png";
+import heroku from "../../../assets/heroku.png";
+import html from "../../../assets/html.png";
+import javascript from "../../../assets/javascript.png";
+import material from "../../../assets/material.png";
+import mongo from "../../../assets/mongo.png";
+import mysql from "../../../assets/mysql.svg";
+import node from "../../../assets/node.png";
+import npm from "../../../assets/npm.png";
+import react from "../../../assets/react.png";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -78,11 +78,11 @@ const cloud = [
   { img: aws, alt: "aws" },
 ];
 
-const Skills = () => {
+const Skills = ({ id, index, background }) => {
   const classes = useStyle();
 
   return (
-    <Section id="skills" index={1} background="#F0F0F0">
+    <Section id={id} index={index} background={background}>
       <React.Fragment>
         <Grid container justify="center">
           <Grid
