@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
-import CardDetail from "./cardDetail";
+import DrawerDetail from "./drawerDetail";
 
 const useStyles = makeStyles({
   root: {
@@ -37,16 +37,17 @@ const HtmlTooltip = withStyles((theme) => ({
 
 export default function CardDisplay({ image, title, body, github, detail }) {
   const classes = useStyles();
-  const [state, setState] = React.useState(false);
+  const [openDetail, setOpenDetail] = React.useState(false);
 
   const toggleDrawer = (open) => (event) => {
     if (
+      event &&
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
-    setState(open);
+    setOpenDetail(open);
   };
 
   return (
@@ -70,9 +71,9 @@ export default function CardDisplay({ image, title, body, github, detail }) {
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardDetail
-            state={state}
-            setState={setState}
+          <DrawerDetail
+            open={openDetail}
+            setState={setOpenDetail}
             toggleDrawer={toggleDrawer}
             anchor="right"
             title={title}
