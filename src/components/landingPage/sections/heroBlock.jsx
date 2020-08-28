@@ -2,7 +2,8 @@ import React from "react";
 
 import Section from "../../../common/section";
 
-import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import HeroImageGrid from "../../../common/heroImageGrid";
 import Typography from "@material-ui/core/Typography";
 
@@ -31,15 +32,30 @@ const useStyle = makeStyles((theme) => ({
 
 const HeroBlock = ({ id, index, background }) => {
   const classes = useStyle();
+  const theme = useTheme();
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <HeroImageGrid container image={image} alignItems="center" justify="center">
       <Section id={id} index={index} background={background}>
         <Typography className={classes.heroContent1} align="center">
           Hi I am a Full-stack
         </Typography>
-        <Typography className={classes.heroContent2} align="center">
-          Python | Node.Js | React.Js
-        </Typography>
+        {matchesSM ? (
+          <Typography className={classes.heroContent2} align="center">
+            Python
+            <br />
+            Node.Js
+            <br />
+            React.Js
+          </Typography>
+        ) : (
+          <Typography className={classes.heroContent2} align="center">
+            Python | Node.Js | React.Js
+          </Typography>
+        )}
+
         <Typography className={classes.heroContent1} align="center">
           developer
         </Typography>
