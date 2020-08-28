@@ -67,7 +67,7 @@ export default createMuiTheme({
     },
 
     h2: {
-      fontFamily: "Raleway",
+      fontFamily: "Roboto",
       fontWeight: 700,
       fontSize: "2.5rem",
       color: arcBlue,

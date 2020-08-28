@@ -6,6 +6,7 @@ import { VizContext } from "../contexts/visibilityContext";
 import VizSensor from "react-visibility-sensor";
 
 const Section = ({ id, index, background, children }) => {
+  // eslint-disable-next-line
   const [navValue, setNavValue] = useContext(NavValueContext);
   const [vizValue, setVizValue] = useContext(VizContext);
 
@@ -13,18 +14,14 @@ const Section = ({ id, index, background, children }) => {
     let vizV = { ...vizValue };
     vizV[id].value = isVisible;
     setVizValue(vizV);
-    switch (isVisible) {
-      case true:
-        setNavValue(index);
-        break;
-      case false:
-        for (var tab in vizV) {
-          if (vizV[tab].value) {
-            setNavValue(vizV[tab].index);
-            break;
-          }
+    isVisible && setNavValue(index);
+    if (!isVisible)
+      for (var tab in vizV) {
+        if (vizV[tab].value) {
+          setNavValue(vizV[tab].index);
+          break;
         }
-    }
+      }
   };
 
   return (

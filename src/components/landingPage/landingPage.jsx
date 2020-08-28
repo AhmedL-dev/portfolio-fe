@@ -11,7 +11,7 @@ const LandingPage = () => {
     <React.Fragment>
       <HeroBlock id="heroBlock" index={false} />
       <About id="about" index={0} />
-      <Portfolio id="portfolio" index={1} />
+      <Portfolio id="portfolio" index={1} background="#F6F9FF" />
       <Skills id="skills" index={2} background="#F0F0F0" />
       <Contact id="contact" index={3} />
     </React.Fragment>
