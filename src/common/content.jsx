@@ -12,10 +12,10 @@ const useStyles = makeStyles({
     width: "100%",
   },
   textContainer: {
-    width: "80%",
+    width: "90%",
   },
   imageContainer: {
-    width: "80%",
+    width: "90%",
     boxShadow: "0px 5px 16px -10px rgba(0,0,0,0.75)",
   },
 
