@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import { NavValueContext } from "../../contexts/navValueContext";
 
 import Link from "@material-ui/core/Link";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import AppBar from "@material-ui/core/AppBar";
@@ -31,34 +31,46 @@ const useStyles = makeStyles((theme) => ({
   indicator: {
     backgroundColor: "white",
   },
+  appBar: {
+    zIndex: theme.zIndex.modal + 1,
+
+    // transition: " 0.3s ease",
+  },
 }));
-
-function ColorOnScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-    color: trigger ? "primary" : "transparent",
-  });
-}
 
 export default function Navbar(props) {
   const classes = useStyles();
+  const theme = useTheme();
   const [navValue, setNavValue] = useContext(NavValueContext);
+  const [scroll, setScroll] = useState(false);
+  const [transition, setTransition] = useState("0.3s ease");
 
   const handleChange = (event, newValue) => {
     setTimeout(() => setNavValue(newValue), 1000);
   };
 
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      window.scrollY > 100 && setScroll(true);
+      window.scrollY > 200 && setTransition("");
+      window.scrollY < 100 && setScroll(false);
+      window.scrollY < 200 && setTransition("0.3s ease");
+    });
+  }, []);
+
   return (
     <React.Fragment>
-      <ColorOnScroll {...props}>
-        <AppBar position="fixed" style={{ transition: "0.3s ease" }}>
+      <div style={{ transition: " 0.3s ease" }}>
+        <AppBar
+          position="fixed"
+          className={classes.appBar}
+          elevation={scroll ? 4 : 0}
+          color={scroll ? "primary" : "transparent"}
+          style={{
+            transition: transition,
+            // backgroundColor: scroll ? "black" : "transparent",
+          }}
+        >
           <Container maxWidth="lg">
             <Toolbar disableGutters>
               <Link
@@ -105,7 +117,7 @@ export default function Navbar(props) {
             </Toolbar>
           </Container>
         </AppBar>
-      </ColorOnScroll>
+      </div>
     </React.Fragment>
   );
 }

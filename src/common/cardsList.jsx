@@ -9,7 +9,14 @@ const CardsList = ({ data }) => {
     <Fragment>
       <Grid style={{ marginTop: "5em" }} item container justify="space-evenly">
         {data.map((d) => (
-          <Card key={d.title} image={d.image} title={d.title} body={d.body} />
+          <Card
+            key={d.title}
+            {...d}
+            // image={d.image}
+            // title={d.title}
+            // body={d.body}
+            // github={d.github}
+          />
         ))}
       </Grid>
     </Fragment>
