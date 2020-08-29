@@ -1,8 +1,7 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Content from "./content";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
   list: {
@@ -18,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
       width: "35em",
     },
     [theme.breakpoints.down("xs")]: {
-      width: "25em",
+      width: "23em",
     },
   },
   drawer: {
@@ -34,8 +33,6 @@ export default function DrawerDetail({
   title,
 }) {
   const classes = useStyles();
-  const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <SwipeableDrawer

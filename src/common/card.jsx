@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -35,7 +35,14 @@ const HtmlTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-export default function CardDisplay({ image, title, body, github, detail }) {
+export default function CardDisplay({
+  image,
+  title,
+  body,
+  github,
+  detail,
+  liveLink,
+}) {
   const classes = useStyles();
   const [openDetail, setOpenDetail] = React.useState(false);
 
@@ -89,7 +96,7 @@ export default function CardDisplay({ image, title, body, github, detail }) {
                 <Typography color="inherit">Github repositories</Typography>
                 {github.map((g) => (
                   <div key={g}>
-                    <a href={g} target="_blank">
+                    <a href={g} target="_blank" rel="noopener noreferrer">
                       {g}
                     </a>
                   </div>
@@ -105,9 +112,18 @@ export default function CardDisplay({ image, title, body, github, detail }) {
               <GitHubIcon />
             </IconButton>
           </HtmlTooltip>
-          <Button onClick={toggleDrawer(true)} size="small" color="primary">
-            Learn More
-          </Button>
+          {liveLink && (
+            <Button
+              onClick={() => {
+                github.map((g) => window.open(liveLink, "_blank"));
+              }}
+              title={liveLink}
+              size="small"
+              color="primary"
+            >
+              live version
+            </Button>
+          )}
         </CardActions>
       </div>
     </Card>

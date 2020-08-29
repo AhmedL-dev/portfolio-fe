@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { NavValueContext } from "../../contexts/navValueContext";
@@ -10,14 +10,7 @@ import NavTabs from "../../common/navbar/tabs";
 import NavDrawer from "../../common/navbar/drawer";
 import CustomAppBar from "../../common/navbar/customAppBar";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-}));
-
-export default function Navbar(props) {
-  const classes = useStyles();
+export default function Navbar() {
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const [navValue, setNavValue] = useContext(NavValueContext);

@@ -4,8 +4,7 @@ import Section from "../../../common/section";
 import CardsList from "../../../common/cardsList";
 import projectService from "../../../services/projectService";
 
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
@@ -14,6 +13,9 @@ const useStyle = makeStyles((theme) => ({
     ...theme.typography.hero,
     color: "black",
     fontSize: "4rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "3rem",
+    },
   },
 
   content: {
@@ -26,7 +28,6 @@ const useStyle = makeStyles((theme) => ({
 
 const Portfolio = ({ id, index, background }) => {
   const classes = useStyle();
-  const theme = useTheme();
   const data = projectService.getProjects();
 
   return (

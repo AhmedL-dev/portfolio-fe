@@ -26,6 +26,9 @@ const useStyle = makeStyles((theme) => ({
     ...theme.typography.hero,
     color: "black",
     fontSize: "4rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "3rem",
+    },
   },
   name: {
     fontSize: "2rem",

@@ -13,6 +13,9 @@ const useStyle = makeStyles((theme) => ({
     ...theme.typography.hero,
     color: "black",
     fontSize: "4rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "3rem",
+    },
   },
   name: {
     fontSize: "2rem",
@@ -30,10 +33,17 @@ const useStyle = makeStyles((theme) => ({
     height: "15em",
     width: "15em",
     [theme.breakpoints.down("sm")]: {
-      height: "20em",
-      width: "20em",
+      height: "10em",
+      width: "10em",
       maxHeight: 300,
       maxWidth: 300,
+      margin: "2em",
+    },
+  },
+  aboutContainer: {
+    [theme.breakpoints.down("sm")]: {
+      marginRight: "2em",
+      marginLeft: "2em",
     },
   },
 }));
@@ -49,17 +59,20 @@ const About = ({ id, index, background }) => {
           direction="column"
           alignItems="center"
           style={{ maxWidth: "45em" }}
+          className={classes.aboutContainer}
         >
           <Typography align="center" className={classes.title}>
             ABOUT ME
           </Typography>
           <Avatar src={profile} alt="founder" className={classes.avatar} />
-          <Typography className={classes.name}>Ahmed Laadraoui</Typography>
-          <Typography className={classes.content}>
+          <Typography align="center" className={classes.name}>
+            Ahmed Laadraoui
+          </Typography>
+          <Typography align="center" className={classes.content}>
             PYTHON | NODE JS | REACT JS
           </Typography>
           <Typography
-            align="center"
+            align="justify"
             style={{ marginTop: "2em" }}
             className={classes.content}
             paragraph
@@ -71,7 +84,7 @@ const About = ({ id, index, background }) => {
             is mathematics and programming.
           </Typography>
           <Typography
-            align="center"
+            align="justify"
             style={{ marginTop: "2em" }}
             className={classes.content}
             paragraph
@@ -87,7 +100,7 @@ const About = ({ id, index, background }) => {
             often in data science
           </Typography>
           <Typography
-            align="center"
+            align="justify"
             style={{ marginTop: "2em" }}
             className={classes.content}
             paragraph
@@ -100,7 +113,7 @@ const About = ({ id, index, background }) => {
             than ever.
           </Typography>
           <Typography
-            align="center"
+            align="justify"
             style={{ marginTop: "2em" }}
             className={classes.content}
             paragraph

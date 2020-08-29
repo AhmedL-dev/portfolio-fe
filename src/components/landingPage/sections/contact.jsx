@@ -2,7 +2,8 @@ import React from "react";
 
 import Section from "../../../common/section";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import HeroImageGrid from "../../../common/heroImageGrid";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -15,6 +16,14 @@ const useStyle = makeStyles((theme) => ({
   heroContent1: {
     ...theme.typography.hero,
     [theme.breakpoints.down("sm")]: {
+      fontSize: "1.5rem",
+    },
+  },
+  infos: {
+    ...theme.typography.hero,
+    fontSize: "1.7rem",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "0.5em",
       fontSize: "1.5rem",
     },
   },
@@ -49,6 +58,8 @@ const useStyle = makeStyles((theme) => ({
 
 const Contact = ({ id, index, background }) => {
   const classes = useStyle();
+  const theme = useTheme();
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <HeroImageGrid container image={image} alignItems="center" justify="center">
@@ -63,20 +74,27 @@ const Contact = ({ id, index, background }) => {
         </Grid>
 
         <Grid
-          style={{ marginTop: "5em" }}
+          style={{ marginTop: matchesSM ? "0em" : "4em" }}
           item
           container
           justify="space-evenly"
         >
-          <Grid item container md direction="column" alignItems="center">
+          <Grid
+            style={{ marginRight: matchesSM ? 0 : "3em" }}
+            item
+            container
+            md
+            direction="column"
+            alignItems="center"
+          >
             <PhoneAndroidIcon color="secondary" className={classes.icons} />
-            <Typography className={classes.heroContent1} align="center">
+            <Typography className={classes.infos} align="center">
               (+212) 623-776 245
             </Typography>
           </Grid>
           <Grid item container md direction="column" alignItems="center">
             <EmailIcon color="secondary" className={classes.icons} />
-            <Typography className={classes.heroContent1} align="center">
+            <Typography className={classes.infos} align="center">
               laadraouiahmed@gmail.com
             </Typography>
           </Grid>

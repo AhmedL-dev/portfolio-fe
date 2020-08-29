@@ -17,15 +17,9 @@ const useStyle = makeStyles((theme) => ({
     ...theme.typography.hero,
     fontWeight: 700,
     fontSize: "4rem",
-  },
-  avatar: {
-    height: "15em",
-    width: "15em",
     [theme.breakpoints.down("sm")]: {
-      height: "20em",
-      width: "20em",
-      maxHeight: 300,
-      maxWidth: 300,
+      fontWeight: 700,
+      fontSize: "3rem",
     },
   },
 }));
@@ -33,7 +27,6 @@ const useStyle = makeStyles((theme) => ({
 const HeroBlock = ({ id, index, background }) => {
   const classes = useStyle();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
