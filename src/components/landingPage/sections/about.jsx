@@ -77,11 +77,11 @@ const About = ({ id, index, background }) => {
             className={classes.content}
             paragraph
           >
-            Hi there! I am an aeronautical engineer. You will ask me what am I
-            doing here ? I will tell you that I have studied more computer
-            programming and development than mechanics throughout my entire
-            mechanical career. To get there, I only followed my passions which
-            is mathematics and programming.
+            Hi there! I am an aeronautical engineer. You might ask me what am I
+            doing here ? Let me tell you this : I’ve studied more computer
+            programming and web development than mechanics throughout my entire
+            mechanical career. To get here, I only followed my passions :
+            Mathematics and Programming.
           </Typography>
           <Typography
             align="justify"
@@ -89,15 +89,15 @@ const About = ({ id, index, background }) => {
             className={classes.content}
             paragraph
           >
-            I started by coding my trading strategies, because yes I am also a
-            trader, then after having met the champion{" "}
+            I started by coding my trading strategies, because, yes I am also a
+            trader. Then after having met the champion{" "}
             <span style={{ fontWeight: 700, fontFamily: "Alata, sans-serif" }}>
               Mostafa Belkhayat
-            </span>{" "}
-            I started coding his own winning strategies which became trading
-            robots. Which gave me more confidence. This area has increased my
-            analytical skills which helps me enormously in complex projects
-            often in data science
+            </span>
+            , I started coding his own winning strategies that later became
+            trading robots ; which gave me more confidence. This area has
+            developed my analytical skills ; and THAT helps me tremendously in
+            complex projects, often, in data science.
           </Typography>
           <Typography
             align="justify"
@@ -105,12 +105,11 @@ const About = ({ id, index, background }) => {
             className={classes.content}
             paragraph
           >
-            I started Web development with django and flask, because I was
+            I started Web development with django and flask, because I was a
             PYTHON fanatic :p. <br />I needed the web development to prototype
-            my ideas and make them real. I was finally convinced by the nodejs
-            frameworks whether in frontend or backend. what plunged me into the
-            world of JavaScript which made me even more fanatic and passionate
-            than ever.
+            my ideas and make them real. I was finally convinced by the Nodejs
+            frameworks whether in frontend or backend, which drove me into the
+            world of JavaScript and made me even more passionate than ever.
           </Typography>
           <Typography
             align="justify"
