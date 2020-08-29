@@ -6,7 +6,6 @@ import arcdevEstimateResult from "../assets/portfolio/arcdev4-estimate.PNG";
 import movily from "../assets/portfolio/movily1.PNG";
 import movilyForm from "../assets/portfolio/movily2-form.PNG";
 import movilyLogin from "../assets/portfolio/movily3-login.PNG";
-import upface from "../assets/portfolio/upface.PNG";
 
 const projects = [
   {
@@ -65,7 +64,7 @@ const projects = [
     ],
   },
   {
-    title: "movily",
+    title: "Movily",
     body: "Node.js | React.js | Bootstrap | Mongodb",
     image: movily,
     github: [
