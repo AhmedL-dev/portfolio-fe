@@ -1,26 +1,24 @@
 import React, { Component } from "react";
-
-import theme from "./common/Theme";
+import { Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
 
-import "./App.css";
-import NavBar from "./components/ui/navbar";
+import history from "./history";
+import theme from "./common/Theme";
+import Admin from "./components/adminPage/adminPage";
+import Login from "./components/auth/login";
 import LandingPage from "./components/landingPage/landingPage";
-
-import { NavValueProvider } from "./contexts/navValueContext";
-import { VizProvider } from "./contexts/visibilityContext";
+import "./App.css";
 
 class App extends Component {
   state = {};
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <NavValueProvider>
-          <VizProvider>
-            <NavBar />
-            <LandingPage />
-          </VizProvider>
-        </NavValueProvider>
+        <Router history={history}>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/login" component={Login} />
+        </Router>
       </ThemeProvider>
     );
   }

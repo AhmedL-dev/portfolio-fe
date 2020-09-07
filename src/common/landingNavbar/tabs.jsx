@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "40px",
   },
   indicator: {
-    backgroundColor: "white",
+    backgroundColor: theme.palette.common.indicator || "secondary",
   },
 }));
 

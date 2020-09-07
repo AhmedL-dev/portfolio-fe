@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomAppBar = ({ children }) => {
+const CustomAppBar = ({ children, color = "primary" }) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
@@ -36,7 +36,7 @@ const CustomAppBar = ({ children }) => {
       position="fixed"
       className={classes.appBar}
       elevation={scroll || matchesSM ? 4 : 0}
-      color={scroll || matchesSM ? "primary" : "transparent"}
+      color={scroll || matchesSM ? color : "transparent"}
       style={{
         transition: matchesSM ? "" : transition,
       }}

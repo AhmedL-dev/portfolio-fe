@@ -42,7 +42,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Drawer({ navValue, onChange, items }) {
+export default function Drawer({
+  navValue,
+  onChange,
+  items,
+  menuIconColor = "white",
+  anchor = "top",
+}) {
   const classes = useStyles();
   const [state, setState] = React.useState(false);
 
@@ -96,12 +102,12 @@ export default function Drawer({ navValue, onChange, items }) {
       </List>
     </div>
   );
-  const anchor = "top";
+
   return (
     <div>
       <React.Fragment key={anchor}>
         <IconButton onClick={toggleDrawer(anchor, !state)}>
-          <MenuIcon style={{ color: "white" }} />
+          <MenuIcon style={{ color: menuIconColor }} />
         </IconButton>
         <SwipeableDrawer
           anchor={anchor}

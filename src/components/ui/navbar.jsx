@@ -5,10 +5,10 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { NavValueContext } from "../../contexts/navValueContext";
 
-import Logo from "../../common/navbar/logo";
-import NavTabs from "../../common/navbar/tabs";
-import NavDrawer from "../../common/navbar/drawer";
-import CustomAppBar from "../../common/navbar/customAppBar";
+import Logo from "../../common/landingNavbar/logo";
+import NavTabs from "../../common/landingNavbar/tabs";
+import NavDrawer from "../../common/landingNavbar/drawer";
+import CustomAppBar from "../../common/landingNavbar/customAppBar";
 
 export default function Navbar() {
   const theme = useTheme();
@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <React.Fragment>
-      <CustomAppBar>
+      <CustomAppBar color="primary">
         <Logo link="#" name="LAADRAOUI" setNavValue={setNavValue} />
         {matchesSM ? (
           <NavDrawer

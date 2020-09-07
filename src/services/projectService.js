@@ -13,7 +13,7 @@ const projects = [
     body: "React.js | Firebase | Material-ui ",
     image: arcdevHome,
     github: ["https://github.com/AhmedL-dev/arcdev"],
-    liveLink: "https://arcsoftwaredevelopment.com/",
+    liveLink: ["https://arcsoftwaredevelopment.com/"],
     detail: [
       {
         type: "string",
@@ -71,7 +71,7 @@ const projects = [
       "https://github.com/AhmedL-dev/movily-backend",
       "https://github.com/AhmedL-dev/movily-frontend",
     ],
-    liveLink: "https://movily-sbignzi.netlify.app/",
+    liveLink: ["https://movily-sbignzi.netlify.app/"],
     detail: [
       {
         type: "string",

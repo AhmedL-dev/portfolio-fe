@@ -11,6 +11,7 @@ export default createMuiTheme({
       blue: arcBlue,
       orange: arcOrange,
       greyBlack: greyBlack,
+      indicator: "#FFFFFF",
     },
     primary: {
       main: arcBlue,

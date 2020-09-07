@@ -1,8 +1,8 @@
 import React from "react";
 
 import Section from "../../../common/section";
-import CardsList from "../../../common/cardsList";
 import projectService from "../../../services/projectService";
+import ProjectCards from "../projectCards";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
@@ -48,7 +48,7 @@ const Portfolio = ({ id, index, background }) => {
           </Typography>
         </Grid>
         <Grid item container>
-          <CardsList data={data} />
+          <ProjectCards />
         </Grid>
       </Grid>
     </Section>
