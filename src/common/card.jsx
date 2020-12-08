@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-const HtmlTooltip = withStyles((theme) => ({
+const HtmlTooltip = withStyles(theme => ({
   tooltip: {
     backgroundColor: "#f5f5f9",
     color: "rgba(0, 0, 0, 0.87)",
@@ -35,23 +36,12 @@ const HtmlTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-export default function CardDisplay({
-  image,
-  title,
-  body,
-  github,
-  detail,
-  liveLink,
-}) {
+export default function CardDisplay({ image, title, body, github, detail, liveLink }) {
   const classes = useStyles();
   const [openDetail, setOpenDetail] = React.useState(false);
 
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
+  const toggleDrawer = open => event => {
+    if (event && event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
       return;
     }
     setOpenDetail(open);
@@ -59,16 +49,10 @@ export default function CardDisplay({
 
   return (
     <Card className={classes.root}>
-      <div className={classes.cardContainer}>
+      <Grid>
         <React.Fragment>
           <CardActionArea onClick={toggleDrawer(true)}>
-            <CardMedia
-              component="img"
-              alt={title}
-              height="100%"
-              image={image}
-              title={title}
-            />
+            <CardMedia component="img" alt={title} height="100%" image={image} title={title} />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
                 {title}
@@ -94,7 +78,7 @@ export default function CardDisplay({
             title={
               <Fragment>
                 <Typography color="inherit">Github repositories</Typography>
-                {github.map((g) => (
+                {github.map(g => (
                   <div key={g}>
                     <a href={g} target="_blank" rel="noopener noreferrer">
                       {g}
@@ -106,7 +90,7 @@ export default function CardDisplay({
           >
             <IconButton
               onClick={() => {
-                github.map((g) => window.open(g, "_blank"));
+                github.map(g => window.open(g, "_blank"));
               }}
             >
               <GitHubIcon />
@@ -115,7 +99,7 @@ export default function CardDisplay({
           {liveLink && (
             <Button
               onClick={() => {
-                github.map((g) => window.open(liveLink, "_blank"));
+                github.map(g => window.open(liveLink, "_blank"));
               }}
               title={liveLink}
               size="small"
@@ -125,7 +109,7 @@ export default function CardDisplay({
             </Button>
           )}
         </CardActions>
-      </div>
+      </Grid>
     </Card>
   );
 }
